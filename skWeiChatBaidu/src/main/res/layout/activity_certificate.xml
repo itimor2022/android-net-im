@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <RelativeLayout
+        android:id="@+id/rl_input"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dp20"
+            android:paddingVertical="@dimen/dp10"
+            android:layout_margin="@dimen/dp40"
+            android:singleLine="true"
+            android:inputType="text"
+            android:hint="请输入姓名"
+            android:background="@drawable/account_edit_bg"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_idcard"
+            android:layout_below="@id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dp20"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:hint="请输入身份证号码"
+            android:singleLine="true"
+            android:inputType="text"
+            android:background="@drawable/account_edit_bg"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_commit"
+            android:text="立即认证"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14_text_size"
+            android:padding="12dp"
+            android:background="@drawable/a_bg_for_send_msg"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp60"
+            android:minHeight="@dimen/dp10"
+            android:minWidth="@dimen/dp10"
+            android:layout_below="@id/et_idcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_certificate_text"
+        android:drawableTop="@drawable/ic_sk_pay_avatar"
+        android:text="您已完成实名认证"
+        android:visibility="gone"
+        android:textSize="@dimen/sp_16_text_size"
+        android:gravity="center"
+
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp200"
+        android:textColor="@color/app_skin_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

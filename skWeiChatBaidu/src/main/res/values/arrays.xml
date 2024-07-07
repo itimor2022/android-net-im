@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="usdt_addr_type">
+        <item>TRC20</item>
+        <!--<item>ERC20</item>-->
+    </string-array>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_tip_dialog">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textColor="@color/color_red"
+            android:textSize="@dimen/sp_20_text_size"
+            android:text="@string/warning" />
+
+
+        <TextView
+            android:id="@+id/tv_content_message"
+            android:layout_below="@id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:minLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_17_text_size"
+            tools:text="@string/change_tip" />
+
+        <View style="@style/View_Line" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/dp15"
+                android:background="@drawable/dialog_tip_selector_background_ripple"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/Grey_800"
+                android:textSize="@dimen/sp_18_text_size" />
+
+            <View
+                android:layout_width="1dp"
+                android:background="@color/line"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/dp20" />
+
+            <TextView
+                android:id="@+id/confirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:padding="@dimen/dp15"
+                android:background="@drawable/dialog_tip_selector_background_ripple"
+                android:gravity="center"
+                android:text="@string/sure"
+                android:textColor="@color/color_red"
+                android:textSize="@dimen/sp_18_text_size"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

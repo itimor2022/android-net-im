@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frag_discover_officalaccout_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rel_hot_hao"
+        style="@style/IMTbleLine_UP"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:layout_marginTop="9dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:text="@string/fragment_discover_title_officalaccount"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/me_divider"
+        android:orientation="vertical"
+        android:background="@color/normal_bg"
+        android:layout_weight="1"
+        android:layout_below="@+id/rel_hot_hao">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPublicNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:clipToPadding="false"
+            android:fastScrollEnabled="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_square_public_number" />
+
+        <RelativeLayout
+            android:id="@+id/rel_kefu"
+            style="@style/IMTbleLine_UP"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <com.sk.weichat.view.LightImageView
+                android:id="@+id/kefu"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="fitCenter"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_new_friend_circle"
+                app:srcLight="@drawable/icon_new_friend_circle" />
+
+            <TextView
+                android:id="@+id/main_tab_kefu_tv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/tab_unread_bg"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="10dp"
+                android:text="1"
+                android:visibility="invisible" />
+
+            <TextView
+                style="@style/IMTbleLine_TextName"
+                android:layout_centerVertical="true"
+                android:text="@string/fragment_discover_title_kefu_officalaccount" />
+
+            <ImageView
+                style="@style/IMTbleLine_ArrowImg.Me"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/me_chevron_right"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
