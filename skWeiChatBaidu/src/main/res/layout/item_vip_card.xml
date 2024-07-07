@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_card"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_below="@+id/rl_head"
+    android:layout_margin="@dimen/dp20"
+    android:background="@drawable/icon_vip_card_bg"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:src="@drawable/icon_vip_card_1"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/iv_vip_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_1"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp10"
+        android:src="@drawable/icon_account_vip_code" />
+
+    <TextView
+        android:id="@+id/tv_vip_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_vip_code"
+        android:layout_marginLeft="@dimen/dp20"
+        android:text=""
+        android:textColor="#6d3f21"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_vip_serial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:textColor="#a1704f"
+        android:textSize="10sp"
+        tools:text="序列号 897895686588898868" />
+
+    <TextView
+        android:id="@+id/tv_vip_name"
+        tools:text="世界文化遗产"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_vip_serial"
+        android:layout_marginLeft="@dimen/dp20"
+        android:textColor="#a1704f"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:src="@drawable/icon_vip_code" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:drawableLeft="@drawable/icon_vip_card_2"
+        android:gravity="center_vertical"
+        android:textSize="10sp" />
+
+</RelativeLayout>

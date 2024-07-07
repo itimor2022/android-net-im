@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp40"
+            android:layout_marginEnd="@dimen/dp40"
+            android:layout_marginBottom="@dimen/dp40"
+            android:background="@drawable/account_edit_bg"
+            android:gravity="center_vertical"
+            android:hint="请输入16位数编码"
+            android:inputType="number"
+            android:maxLength="16"
+            android:paddingHorizontal="@dimen/dp20"
+            android:paddingVertical="@dimen/dp10"
+            android:singleLine="true"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_password"
+            android:layout_below="@id/et_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dp20"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:layout_marginBottom="@dimen/dp40"
+            android:hint="请输入密码"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:background="@drawable/account_edit_bg"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_commit"
+            android:text="激活"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14_text_size"
+            android:padding="12dp"
+            android:background="@drawable/a_bg_for_send_msg"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp60"
+            android:minHeight="@dimen/dp10"
+            android:minWidth="@dimen/dp10"
+            android:layout_below="@id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_checked_tyep"
+            android:text="无密码激活"
+            android:textColor="@color/green"
+            android:textSize="@dimen/sp_14_text_size"
+            android:padding="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btn_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

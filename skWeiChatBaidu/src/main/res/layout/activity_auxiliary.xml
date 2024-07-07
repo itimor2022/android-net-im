@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dp20"
+            android:paddingVertical="@dimen/dp10"
+            android:layout_margin="@dimen/dp40"
+            android:maxLength="16"
+            android:singleLine="true"
+            android:inputType="number"
+            android:hint="请输入16位数vip编码"
+            android:background="@drawable/account_edit_bg"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <com.sk.weichat.view.ClearEditText
+            android:id="@+id/et_phone"
+            android:layout_below="@id/et_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/dp20"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:layout_marginBottom="@dimen/dp40"
+            android:hint="请输入手机号"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:background="@drawable/account_edit_bg"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/sp_16_text_size" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_commit"
+            android:text="激活"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14_text_size"
+            android:padding="12dp"
+            android:background="@drawable/a_bg_for_send_msg"
+            android:layout_marginHorizontal="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp60"
+            android:minHeight="@dimen/dp10"
+            android:minWidth="@dimen/dp10"
+            android:layout_below="@id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

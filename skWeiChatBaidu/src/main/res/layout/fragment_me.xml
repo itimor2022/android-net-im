@@ -1,0 +1,428 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/info_rl"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@color/white">
+<!--                 android:layout_height="180dp" -->
+
+                <ImageView
+                    android:id="@+id/iv_title_add"
+                    android:layout_width="@dimen/menu_item_size"
+                    android:layout_height="@dimen/menu_item_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/menu_item_padding"
+                    android:src="@mipmap/more_icon"
+                    android:tint="@color/white"
+                    android:visibility="gone" />
+
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="4dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:src="@drawable/ic_pai" />
+
+
+                <ImageView
+                    android:id="@+id/avatar_img"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginBottom="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar_normal"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="66dp"
+                    android:layout_toRightOf="@+id/avatar_img"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:id="@+id/nick_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="@string/example_name" />
+
+                    <TextView
+                        android:id="@+id/vip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/bg_vip_comm"
+                        android:paddingLeft="4dp"
+                        android:includeFontPadding="false"
+                        android:paddingRight="4dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        tools:text="VIP0" />
+
+                </LinearLayout>
+                <!--                <TextView-->
+                <!--                    android:id="@+id/nick_name_tv"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_alignParentBottom="true"-->
+                <!--                    android:layout_marginLeft="17dp"-->
+                <!--                    android:layout_marginTop="8dp"-->
+                <!--                    android:layout_marginBottom="66dp"-->
+                <!--                    android:layout_toRightOf="@+id/avatar_img"-->
+                <!--                    android:ellipsize="end"-->
+                <!--                    android:singleLine="true"-->
+                <!--                    android:textColor="@color/black"-->
+                <!--                    android:textSize="20sp"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    tools:text="@string/example_name" />-->
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/vip_tv"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_alignParentBottom="true"-->
+                <!--                    android:layout_marginLeft="4dp"-->
+                <!--                    android:layout_marginTop="8dp"-->
+                <!--                    android:layout_marginBottom="72dp"-->
+                <!--                    android:layout_toRightOf="@+id/nick_name_tv"-->
+                <!--                    android:ellipsize="end"-->
+                <!--                    android:singleLine="true"-->
+                <!--                    android:textColor="@color/white"-->
+                <!--                    android:textSize="12sp"-->
+                <!--                    android:paddingLeft="6dp"-->
+                <!--                    android:paddingRight="6dp"-->
+                <!--                    android:background="@drawable/bg_vip_comm"-->
+                <!--                    tools:text="VIP0" />-->
+
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/tv_sign_id"-->
+                <!--                    android:layout_width="57dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_alignBottom="@id/nick_name_tv"-->
+                <!--                    android:layout_alignParentEnd="true"-->
+                <!--                    android:layout_marginEnd="115dp"-->
+                <!--                    android:layout_marginBottom="15dp"-->
+                <!--                    android:gravity="center_vertical"-->
+                <!--                    android:text="签到" />-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_toRightOf="@+id/avatar_img"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/phone_number_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        tools:text="17724494001" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="10dp"
+                        android:src="@drawable/me_qrcode" />
+
+                    <ImageView
+                        style="@style/IMTbleLine_ArrowImg.Me"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/me_chevron_right"
+                        android:contentDescription="@string/app_name" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <RelativeLayout
+                        android:id="@+id/my_monry"
+                        style="@style/IMTble_No_Line"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/selector_bg_white"
+                        android:visibility="visible">
+
+                        <com.sk.weichat.view.LightImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_new_mywallet" />
+
+                        <TextView
+                            style="@style/IMTbleLine_TextName"
+                            android:text="@string/my_purse"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/my_space_rl"
+                        style="@style/IMTbleLine_right"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/selector_bg_white"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+                        <com.sk.weichat.view.LightImageView
+                            android:id="@+id/img_dongtai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_new_mymovements" />
+
+                        <TextView
+                            android:id="@+id/MySky"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="@string/my_moments"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.1dp"
+                            android:layout_alignLeft="@+id/MySky"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/divider" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_space_rl2"
+                        style="@style/IMTbleLine_right"
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/selector_bg_white"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+                        <com.sk.weichat.view.LightImageView
+                            android:id="@+id/img_dongtai2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_new_mymovements" />
+
+                        <TextView
+                            android:id="@+id/tv_sign_id"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="@string/my_sign"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_sign_total"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="+1"
+                            android:textColor="@color/color_21C074"
+                            android:layout_marginStart="4dp"
+                            android:layout_toRightOf="@id/tv_sign_id"
+                            android:textStyle="normal" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.1dp"
+                            android:layout_alignLeft="@+id/tv_sign_id"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/divider" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_collection_rl"
+                        style="@style/IMTbleLine_right"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/selector_bg_white">
+
+                        <com.sk.weichat.view.LightImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_new_myfav" />
+
+                        <TextView
+                            android:id="@+id/my_collection_tv"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="@string/my_collection"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+<!--                        <View-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="0.1dp"-->
+<!--                            android:layout_alignLeft="@+id/my_collection_tv"-->
+<!--                            android:layout_alignParentBottom="true"-->
+<!--                            android:background="@color/divider" />-->
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/local_course_rl"
+                        style="@style/IMTble_No_Line"
+                        android:background="@drawable/selector_bg_white"
+                        android:visibility="gone">
+
+                        <com.sk.weichat.view.LightImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/my_course" />
+
+                        <TextView
+                            android:id="@+id/my_course_tv"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="@string/my_course"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="9dp"
+                        android:background="@color/normal_bg" />
+
+                    <RelativeLayout
+                        android:id="@+id/setting_rl"
+                        style="@style/IMTble_No_Line"
+                        android:background="@drawable/selector_bg_white">
+
+                        <com.sk.weichat.view.LightImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_new_settings" />
+
+                        <TextView
+                            android:id="@+id/SettingTv"
+                            style="@style/IMTbleLine_TextName"
+                            android:layout_centerVertical="true"
+                            android:text="@string/settings"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            style="@style/IMTbleLine_ArrowImg.Me"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/me_chevron_right"
+                            android:contentDescription="@string/app_name" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

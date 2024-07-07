@@ -1,0 +1,14 @@
+/.idea/
+/.gradle/
+/build
+/local.properties
+/YZxing-lib/build/
+/swiperecyclerview/build/
+/skWeiChatBaidu/build/
+/pullToRefershLibraryMy/build
+/meeting/build
+/jcvideoplayer-lib/build
+/build/
+/OpenGLlibrary/build
+/gradle/
+/skWeiChatBaidu/release/

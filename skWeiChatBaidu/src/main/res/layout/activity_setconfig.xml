@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/a_view_actionbar" />
+
+    <!-- 多点登录 -->
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:paddingBottom="10dp"
+         android:paddingTop="10dp">
+
+         <TextView
+             android:id="@+id/multi_login_tv"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:text="开启多点登录"
+             android:visibility="visible"/>
+
+         <com.suke.widget.SwitchButton
+             android:id="@+id/multi_login_btn"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:sb_background="@color/app_white"
+             app:sb_checked_color="@color/main_color"
+             app:sb_effect_duration="100"
+             app:sb_shadow_radius="4dp"
+             app:sb_show_indicator="false"/>
+
+     </LinearLayout>
+
+     <ListView
+         android:id="@+id/lv_resource"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>-->
+
+    <com.sk.weichat.view.ClearEditText
+        android:id="@+id/search_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp80"
+        android:background="@drawable/rect_1_b"
+        android:layout_marginHorizontal="@dimen/dp20"
+        android:drawableRight="@drawable/search_clear"
+        android:textColor="@color/dark_grey"
+        android:hint="请输入服务器地址"
+        android:textColorHint="@color/grey"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/message_nick_size" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:id="@+id/tv_search_ok"
+        android:layout_marginHorizontal="@dimen/dp40"
+        android:layout_marginTop="20dp"
+        android:text="确定"
+        android:background="@drawable/ql_l_g_bg_ripple"
+        android:textColor="@color/white"/>
+
+    <ListView
+        android:id="@+id/lv_setconfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</LinearLayout>

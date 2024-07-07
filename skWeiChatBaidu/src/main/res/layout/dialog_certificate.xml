@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:text="提示"
+        android:textSize="@dimen/sp_18_text_size"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:textColor="@color/color_333333"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="请确认用户认证信息"
+        android:textSize="14sp"
+        android:textColor="@color/color_333333"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/content_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        tools:text="姓名：张三"
+        android:textSize="14sp"
+        android:textColor="@color/color_333333"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/content_card_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        tools:text="身份证号码：444888198808088888"
+        android:layout_marginBottom="@dimen/dp20"
+        android:textSize="14sp"
+        android:textColor="@color/color_333333"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:padding="10dp"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:maxWidth="100dp"
+            android:text="取消"
+            android:textSize="@dimen/sp_16_text_size"
+            android:background="@drawable/bg_btn_grey_circle"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxWidth="100dp"
+            android:layout_weight="1.0"
+            android:layout_margin="12dp"
+            android:padding="10dp"
+            android:text="确认"
+            android:textSize="@dimen/sp_16_text_size"
+            android:background="@drawable/a_bg_for_send_msg"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</LinearLayout>
