@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.oneim.chat2022_pro.HostHelper;
 import com.sk.weichat.AppConfig;
 import com.sk.weichat.AppConstant;
-import com.sk.weichat.BuildConfig;
+import androidx.multidex.BuildConfig;
 import com.sk.weichat.MyApplication;
 import com.sk.weichat.R;
 import com.sk.weichat.Reporter;
