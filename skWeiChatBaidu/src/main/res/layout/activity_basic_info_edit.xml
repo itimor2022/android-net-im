@@ -196,7 +196,7 @@
                 <RelativeLayout
                     android:id="@+id/qccodeforshiku"
                     style="@style/IMTble_No_Line"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     tools:visibility="visible">
 
                     <TextView

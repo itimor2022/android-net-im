@@ -32,16 +32,16 @@ public class AppConfig {
     public static final String apiKey = "";
 
     // 请求地址
-    public static final String APP_URL = "https://d2pgq5kklrcat6.cloudfront.net/";
-    public static String CONFIG_URL = "http://199.83.177.131:8881/config";// Socket 咕喃 服务器入口
+    public static final String APP_URL = "http://im-api.l93lnt5oowndudkio7yw79yv8zj53onk.com/";
+    public static String CONFIG_URL = "http://im-api.l93lnt5oowndudkio7yw79yv8zj53onk.com/config";// Socket 咕喃 服务器入口
     // public static String CONFIG_URL = "https://imadmin.shijiezhixin.com:8090/config";// Socket 咕喃 服务器入口
 //    public static String CONFIG_URL = "http://1.13.15.121:8090/config";// Socket 咕喃 服务器入口
 
 //图片下载地址
-    public static final String IMG_URL = "https://d2pgq5kklrcat6.cloudfront.net/imapp/ymtest/1.jpg";
+    public static final String IMG_URL = "";
     public static String[] HOST_LIST = {
-            "http://199.83.177.131:8881/config",
-            "http://199.83.177.131:8881/config"
+            "http://im-api.l93lnt5oowndudkio7yw79yv8zj53onk.com/config",
+            "http://im-api.l93lnt5oowndudkio7yw79yv8zj53onk.com/config"
     };
 
     // 发现 - 证书注册

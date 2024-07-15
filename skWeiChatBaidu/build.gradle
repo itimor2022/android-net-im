@@ -153,10 +153,10 @@ android {
 
     signingConfigs {
         sjzjim {
-            keyAlias 'com.benben.xzxmf'
-            keyPassword '123456'
-            storeFile file('../jks/2c7fbc2e32504bb484cf7c7390940436.keystore')
-            storePassword '123456'
+            keyAlias 'qgim'
+            keyPassword '111111'
+            storeFile file('../jks/qgim.jks')
+            storePassword '111111'
         }
     }
 

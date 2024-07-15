@@ -71,16 +71,19 @@ public class MessagePopupWindow extends PopupWindow {
                     continue;
                 }
                 // 关闭定位功能，隐藏附近的人
+                layout.setVisibility(View.GONE);
                 if (disableLocationServer && layout.getId() == R.id.near_person) {
                     layout.setVisibility(View.GONE);
                     continue;
                 }
                 // 关闭公众号功能，隐藏搜索公众号，
+                layout.setVisibility(View.GONE);
                 if (!enableMpModule && layout.getId() == R.id.search_public_number) {
                     layout.setVisibility(View.GONE);
                     continue;
                 }
                 // 关闭支付功能，隐藏收付款，
+                layout.setVisibility(View.GONE);
                 if (!enablePayModule && layout.getId() == R.id.receipt_payment) {
                     layout.setVisibility(View.GONE);
                     continue;
