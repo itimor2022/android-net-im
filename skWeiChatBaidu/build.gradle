@@ -128,7 +128,7 @@ android {
         // 让它不要对Lib做preDexing
         preDexLibraries = false
         // 开启incremental dexing,优化编译效率，这个功能android studio默认是关闭的
-        // incremental true
+        incremental true
         // 增加java堆内存大小
         javaMaxHeapSize "4g"
     }
@@ -153,10 +153,10 @@ android {
 
     signingConfigs {
         sjzjim {
-            keyAlias 'com.benben.xzxmf'
-            keyPassword '123456'
-            storeFile file('../jks/2c7fbc2e32504bb484cf7c7390940436.keystore')
-            storePassword '123456'
+            keyAlias 'qgim'
+            keyPassword '111111'
+            storeFile file('../jks/qgim.jks')
+            storePassword '111111'
         }
     }
 
