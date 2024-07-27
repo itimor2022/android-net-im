@@ -49,7 +49,7 @@ public class AppConstant {
     // 位置地图截图，
     public static final String EXTRA_SNAPSHOT = "snapshot";
 
-    /* 国金企聊 */
+    /* 中信嘉瑞 */
     public static final String EXTRA_FRIEND = "friend";
     public static final String EXTRA_CHAT_MESSAGE = "chatMessage";
 
