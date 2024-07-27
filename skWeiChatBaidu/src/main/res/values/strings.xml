@@ -1926,8 +1926,10 @@
     <string name="total_amount">总金额</string>
     <string name="input_amount">输入金额</string>
     <!--Roken-->
-    <string name="yuan">积分</string>
-    <string name="yuan_symbol">积分</string>
+<!--    <string name="yuan">积分</string>-->
+<!--    <string name="yuan_symbol">积分</string>-->
+    <string name="yuan"/>
+    <string name="yuan_symbol"/>
     <string name="same_amount">小伙伴们领取的金额相同</string>
     <string name="gift_text">恭喜发财,万事如意</string>
     <string name="live">直播</string>
