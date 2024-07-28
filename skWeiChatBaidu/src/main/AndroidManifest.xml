@@ -13,6 +13,9 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.microphone" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -679,7 +682,6 @@
         <provider
             android:name="com.huawei.hms.update.provider.UpdateProvider"
             android:authorities="${APP_ID}.hms.update.provider"
-            android:exported="false"
             android:grantUriPermissions="true" /> <!-- 4.用来接收PUSH消息的receiver： -->
         <receiver android:name=".xmpp.helloDemon.HuaweiPushRevicer">
             <intent-filter>
@@ -694,7 +696,8 @@
                 <action android:name="com.huawei.intent.action.PUSH_STATE" />
             </intent-filter>
         </receiver> <!-- 5. 接收通道发来的通知栏消息： -->
-        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver">
+        <receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver"
+            android:exported="true">
             <intent-filter>
 
                 <!-- 接收通道发来的通知栏消息，兼容老版本PUSH -->
@@ -704,7 +707,8 @@
 
         <activity
             android:name=".ui.life.LifeCircleActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor"
+            tools:ignore="DiscouragedApi" />
         <activity android:name=".ui.nearby.PublicNumberSearchActivity" />
         <activity android:name=".ui.nearby.PublicNumberListActivity" />
         <activity android:name=".ui.circle.range.PraiseListActivity" />

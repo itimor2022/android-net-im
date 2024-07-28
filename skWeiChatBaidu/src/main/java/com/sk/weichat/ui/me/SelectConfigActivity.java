@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.oneim.chat2022_pro.HostHelper;
 import com.sk.weichat.AppConfig;
 import com.sk.weichat.AppConstant;
 import com.sk.weichat.BuildConfig;
@@ -38,12 +35,8 @@ import com.xuan.xuanhttplibrary.okhttp.callback.BaseCallback;
 import com.xuan.xuanhttplibrary.okhttp.result.ObjectResult;
 import com.xuan.xuanhttplibrary.okhttp.result.Result;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.w3c.dom.Text;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +47,6 @@ import okhttp3.Call;
 public class SelectConfigActivity extends SetActionBarActivity {
 
     private RecyclerView recyclerView;
-    private MHandle handle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +55,6 @@ public class SelectConfigActivity extends SetActionBarActivity {
         initActionBar();
 
         initSelectAdapter();
-        initData();
     }
 
     private void initActionBar() {
@@ -90,45 +81,6 @@ public class SelectConfigActivity extends SetActionBarActivity {
         recyclerView.setAdapter(adapter);
 
         findViewById(R.id.btn).setOnClickListener(v -> startActivity(new Intent(this,SetConfigActivity.class)));
-    }
-
-    private void initData(){
-        handle = new MHandle(this);
-        HostHelper.getInstance().excuteHost(AppConfig.IMG_URL, getCacheDir().getAbsolutePath(), new HostHelper.HostCallback() {
-            @Override
-            public void hostCallback(String hostList) {
-                if (hostList == null){
-                    return;
-                }
-
-                Message msg = handle.obtainMessage();
-                msg.what = 1;
-                msg.obj = hostList;
-                handle.sendMessage(msg);
-            }
-        });
-    }
-
-    private void updateList(String json){
-
-        List<String> urls = new ArrayList<>();
-        try {
-            JSONObject jo = new JSONObject(json);
-            JSONArray ja = new JSONArray(jo.optString("data"));
-            for (int i = 0; i < ja.length();i++){
-                JSONObject j = ja.getJSONObject(i);
-                urls.add(j.getString("zoneName"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        List<SelectBean> list = ((SelectAdapter)recyclerView.getAdapter()).getData();
-        int start = list.size();
-        int end = list.size() + urls.size();
-        for (int i = start;i < end;i++){
-            ((SelectAdapter)recyclerView.getAdapter()).addData(new SelectBean(CoreManager.currLoginPipe == i,urls.get(i-start),"线路" + i));
-        }
     }
 
     private void getConfig(int position) {
@@ -242,11 +194,6 @@ public class SelectConfigActivity extends SetActionBarActivity {
             return list;
         }
 
-        public void addData(SelectBean selectBean){
-            list.add(selectBean);
-            notifyDataSetChanged();
-        }
-
         public void select(int position){
             for (SelectBean bean:list){
                 bean.isSelect = false;
@@ -283,21 +230,6 @@ public class SelectConfigActivity extends SetActionBarActivity {
             this.isSelect = isSelect;
             this.url = url;
             this.name = name;
-        }
-    }
-
-    static class MHandle extends Handler{
-
-        private WeakReference<SelectConfigActivity> wrCtx;
-
-        MHandle(SelectConfigActivity configActivity){
-            wrCtx = new WeakReference<>(configActivity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            wrCtx.get().updateList((String) msg.obj);
         }
     }
 }

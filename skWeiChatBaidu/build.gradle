@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 buildscript {
     ext {
-        appId = 'com.stock.eqewq801' // app的包名，
+        appId = 'im.stock.hnkhi901' // app的包名，
         channel = 'client' // bugly上显示的渠道名，
 
         //buglyAppId = '57cf47aaa7' // bugly配置的appId,
@@ -47,8 +47,8 @@ android {
 
     defaultConfig {
         applicationId appId
-        versionCode 8
-        versionName "8.0.1"
+        versionCode 9
+        versionName "9.0.1"
         minSdkVersion min_version
         targetSdkVersion target_version
 
@@ -153,10 +153,10 @@ android {
 
     signingConfigs {
         sjzjim {
-            keyAlias 'qgim'
-            keyPassword '111111'
-            storeFile file('../jks/qgim.jks')
-            storePassword '111111'
+            keyAlias 'com.benben.xzxmf'
+            keyPassword '123456'
+            storeFile file('../jks/2c7fbc2e32504bb484cf7c7390940436.keystore')
+            storePassword '123456'
         }
     }
 

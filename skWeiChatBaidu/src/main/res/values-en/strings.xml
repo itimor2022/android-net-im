@@ -1711,7 +1711,7 @@
     <string name="number_of_envelopes">Number Of Envelopes</string>
     <string name="total_amount">Total Amount</string>
     <string name="input_amount">Input amount</string>
-    <string name="yuan">￥</string>
+    <string name="yuan"></string>
     <string name="same_amount">Small partners receive the same amount</string>
     <string name="gift_text">Congratulation, everything goes well</string>
     <string name="live">Live</string>
@@ -2378,7 +2378,7 @@
     <string name="scan_fail_reason">Failure reason:</string>
     <string name="back_withdraw">Review withdrawal</string>
     <string name="example_total_money" translatable="false">666</string>
-    <string name="rmb_symbol" translatable="false">￥</string>
+    <string name="rmb_symbol" translatable="false"></string>
     <string name="already_pay_ask">Is Paid？</string>
     <string name="already_pay">Paid</string>
     <string name="pay_time">Pay Time</string>

@@ -157,9 +157,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
         requestPermissions();
         initLogin();
-
-
-        ((TextView)findViewById(R.id.versions)).setText("V"+DeviceInfoUtil.getVersionName(this));
     }
 
     private void initLogin(){

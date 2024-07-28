@@ -1718,7 +1718,8 @@ Ang kasalukuyang katayuan ay sumunog pagkatapos basahin, at ang iba pang partido
     <string name="number_of_envelopes">Bilang ng Mga sobre</string>
     <string name="total_amount">Kabuuang Halaga</string>
     <string name="input_amount">Halaga ng pag-input</string>
-    <string name="yuan">￥</string>
+    <string name="yuan"> </string>
+<!--    <string name="yuan">￥</string>-->
     <string name="same_amount">Ang mga maliliit na kasosyo ay nakakatanggap ng parehong halaga</string>
     <string name="gift_text">Pagbati, lahat ay maayos</string>
     <string name="live">Mabuhay</string>

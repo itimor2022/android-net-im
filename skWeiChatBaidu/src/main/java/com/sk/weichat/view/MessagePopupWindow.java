@@ -81,14 +81,10 @@ public class MessagePopupWindow extends PopupWindow {
                     continue;
                 }
                 // 关闭支付功能，隐藏收付款，
-                if (layout.getId() == R.id.receipt_payment) {
+                if (!enablePayModule && layout.getId() == R.id.receipt_payment) {
                     layout.setVisibility(View.GONE);
                     continue;
                 }
-//                if (!enablePayModule && layout.getId() == R.id.receipt_payment) {
-//                    layout.setVisibility(View.GONE);
-//                    continue;
-//                }
                 layout.setOnClickListener(itemsOnClick);
                 for (int j = 0; j < layout.getChildCount(); j++) {
                     View lChild = layout.getChildAt(j);

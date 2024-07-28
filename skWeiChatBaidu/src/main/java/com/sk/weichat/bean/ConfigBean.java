@@ -64,8 +64,8 @@ public class ConfigBean {
     private int fileValidTime = -1;// 文件保存时长，默认永久
     private int isOpenRoomSearch = 1;// 是否开启群组搜索 0：开启 1：关闭
     private int isOpenOnlineStatus = 0;// 是否在聊天界面显示好友在线/离线 0：关闭 1：开启
-    private int enableMpModule = 0;// 是否启用公众号功能 0：关闭 1：开启   服务器可能没有公众号模块，不能搜索公众号，
-    private int enablePayModule = 0;// 是否启用支付功能 0：关闭 1：开启   服务器可能没有支付模块，不能进行收发红包以外的支付操作，
+    private int enableMpModule = 1;// 是否启用公众号功能 0：关闭 1：开启   服务器可能没有公众号模块，不能搜索公众号，
+    private int enablePayModule = 1;// 是否启用支付功能 0：关闭 1：开启   服务器可能没有支付模块，不能进行收发红包以外的支付操作，
     private int isOpenSecureChat = 1;// 是否启用端到端加密功能 0：关闭 1：开启
     private int isOpenManualPay;// 是否启用扫码充值、提现功能 0：关闭 1：开启
     private int isOpenCloudWallet = 0;// 是否启用云钱包

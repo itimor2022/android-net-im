@@ -1234,7 +1234,8 @@
     <string name="tip_change_pay_password_input_twice">Vui lòng điền lại mật khẩu thanh toán để xác nhận</string>
     <string name="tip_change_pay_password_input_incorrect">Nhập mật khẩu hai lần không đúng</string>
     <string name="title_input_pay_password">Vui lòng nhập mật khẩu thanh toán</string>
-    <string name="rmb_symbol" translatable="false">￥</string>
+    <string name="rmb_symbol" translatable="false"> </string>
+<!--    <string name="rmb_symbol" translatable="false">￥</string>-->
     <string name="tip_no_user_id">Đăng nhập dị thường, xin vui lòng đăng nhập lại</string>
     <string name="tip_change_pay_password_success">Đã sửa đổi mật khẩu thanh toán thành công</string>
     <string name="tip_change_pay_password_failed">Sửa đổi mật khẩu thanh toán không thành công, nội bộ dị thường</string>
