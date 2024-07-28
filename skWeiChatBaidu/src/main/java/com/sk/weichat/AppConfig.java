@@ -32,14 +32,14 @@ public class AppConfig {
     public static final String apiKey = "";
 
     // 请求地址
-    public static final String APP_URL = "http://im-api.ebay-ukx.com/";
-    public static String CONFIG_URL = "http://im-api.ebay-ukx.com/config";// Socket 咕喃 服务器入口
+    public static final String APP_URL = "http://75.2.9.72:8881/";
+    public static String CONFIG_URL = "http://75.2.9.72:8881/config";// Socket 咕喃 服务器入口
     // public static String CONFIG_URL = "https://imadmin.shijiezhixin.com:8090/config";// Socket 咕喃 服务器入口
 //    public static String CONFIG_URL = "http://1.13.15.121:8090/config";// Socket 咕喃 服务器入口
 
     public static String[] HOST_LIST = {
-            "http://im-api.ebay-ukx.com/config",
-            "http://im-api.ebay-ukx.com/config"
+            "http://75.2.9.72:8881/config",
+            "http://75.2.9.72:8881/config"
     };
 
     // 发现 - 证书注册
