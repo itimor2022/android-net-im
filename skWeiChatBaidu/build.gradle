@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 buildscript {
     ext {
-        appId = 'com.frt.eqefkiu104' // app的包名，
+        appId = 'com.kjrgt.u31nd105' // app的包名，
         channel = 'client' // bugly上显示的渠道名，
 
         //buglyAppId = '57cf47aaa7' // bugly配置的appId,
@@ -48,7 +48,7 @@ android {
     defaultConfig {
         applicationId appId
         versionCode 1
-        versionName "1.0.4"
+        versionName "1.0.5"
         minSdkVersion min_version
         targetSdkVersion target_version
 
@@ -172,7 +172,7 @@ android {
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // apk_渠道名_版本号_版本名称_版本阶段_编译时间.apk
-                        def fileName = "qgmim" +
+                        def fileName = "im" +
                                 "_C${defaultConfig.versionCode}" +
                                 "_V${defaultConfig.versionName}" +
                                 "_${releaseTime()}.apk"
