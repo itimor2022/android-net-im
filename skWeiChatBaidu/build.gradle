@@ -172,7 +172,7 @@ android {
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // apk_渠道名_版本号_版本名称_版本阶段_编译时间.apk
-                        def fileName = "stockim" +
+                        def fileName = "im" +
                                 "_C${defaultConfig.versionCode}" +
                                 "_V${defaultConfig.versionName}" +
                                 "_${releaseTime()}.apk"
