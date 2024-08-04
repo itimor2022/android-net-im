@@ -153,9 +153,9 @@ android {
 
     signingConfigs {
         sjzjim {
-            keyAlias 'qgim'
+            keyAlias 'qgmim'
             keyPassword '111111'
-            storeFile file('../jks/qgim.jks')
+            storeFile file('../jks/qgmim.jks')
             storePassword '111111'
         }
     }
