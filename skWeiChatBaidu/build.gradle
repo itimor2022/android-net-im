@@ -152,10 +152,10 @@ android {
     }
 
     signingConfigs {
-        sjzjim {
-            keyAlias 'qgim'
+        qgim2 {
+            keyAlias 'qgim2'
             keyPassword '111111'
-            storeFile file('../jks/qgim.jks')
+            storeFile file('../jks/qgim2.jks')
             storePassword '111111'
         }
     }
@@ -166,7 +166,7 @@ android {
             // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField('String', "VERSION_NAME_SUFFIX", '"' + buglyVersionNameSuffix + '"')
-            signingConfig signingConfigs.sjzjim
+            signingConfig signingConfigs.qgim2
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
                     def outputFile = output.outputFile
@@ -184,7 +184,7 @@ android {
         debug {
             buildConfigField('String', "VERSION_NAME_SUFFIX", '"' + "-DEBUG" + '"')
             minifyEnabled false
-            signingConfig signingConfigs.sjzjim
+            signingConfig signingConfigs.qgim2
         }
     }
 
