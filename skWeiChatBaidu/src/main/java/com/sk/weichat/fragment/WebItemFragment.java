@@ -1,18 +1,27 @@
 package com.sk.weichat.fragment;
 
 
+import static android.app.Activity.RESULT_OK;
+
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
+import android.webkit.JsResult;
 import android.webkit.SslErrorHandler;
+import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -20,9 +29,16 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+
 import com.sk.weichat.R;
 import com.sk.weichat.ui.base.EasyFragment;
 import com.sk.weichat.util.UiUtils;
+import com.sk.weichat.util.log.FileUtils;
+
+import java.io.File;
 
 
 /**
@@ -35,6 +51,15 @@ public class WebItemFragment extends EasyFragment implements View.OnClickListene
     private WebSettings mWs;
     public String homeUrl;
     public String title;
+    private ValueCallback<Uri> mUploadCallBack;
+    private ValueCallback<Uri[]> mUploadCallBackAboveL;
+    private String mCameraFilePath;
+    private static final int REQUEST_CODE_FILE_CHOOSER = 0x122;
+
+    private static final String[] PERMISSIONS = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
 
     public WebItemFragment() {
     }
@@ -148,10 +173,69 @@ public class WebItemFragment extends EasyFragment implements View.OnClickListene
             }
         });
 
+        mWebView.setWebChromeClient(webChromeClient);
+
 
         mWebView.loadUrl(homeUrl);
 
     }
+
+    //WebChromeClient主要辅助WebView处理Javascript的对话框、网站图标、网站title、加载进度等
+    private WebChromeClient webChromeClient = new WebChromeClient() {
+        //不支持js的alert弹窗，需要自己监听然后通过dialog弹窗
+
+        @Override
+        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+//            val localBuilder = AlertDialog.Builder(webView.context)
+//            localBuilder.setMessage(message).setPositiveButton("确定", null)
+//            localBuilder.setCancelable(false)
+//            localBuilder.create().show()
+//
+//            //注意:
+//            //必须要这一句代码:result.confirm()表示:
+//            //处理结果为确定状态同时唤醒WebCore线程
+//            //否则不能继续点击按钮
+//            result.confirm()
+//            return true
+            return super.onJsAlert(view, url, message, result);
+        }
+
+        @Override
+        public void onReceivedTitle(WebView view, String title) {
+            super.onReceivedTitle(view, title);
+        }
+
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            super.onProgressChanged(view, newProgress);
+        }
+
+        // For Android < 3.0
+        public void openFileChooser(ValueCallback<Uri> valueCallback) {
+            mUploadCallBack = valueCallback;
+            showFileChooser();
+        }
+
+        // For Android  >= 3.0
+        public void openFileChooser(ValueCallback valueCallback, String acceptType) {
+            mUploadCallBack = valueCallback;
+            showFileChooser();
+        }
+
+        //For Android  >= 4.1
+        public void openFileChooser(ValueCallback<Uri> valueCallback, String acceptType, String capture) {
+            mUploadCallBack = valueCallback;
+            showFileChooser();
+        }
+
+        // For Android >= 5.0
+        @Override
+        public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+            mUploadCallBackAboveL = filePathCallback;
+            showFileChooser();
+            return true;
+        }
+    };
 
 
     @Override
@@ -168,6 +252,43 @@ public class WebItemFragment extends EasyFragment implements View.OnClickListene
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_FILE_CHOOSER) {
+            Uri result = data == null || resultCode != RESULT_OK ? null : data.getData();
+            if (result == null && !TextUtils.isEmpty(mCameraFilePath)) {
+                // 看是否从相机返回
+                File cameraFile = new File(mCameraFilePath);
+                if (cameraFile.exists()) {
+                    result = Uri.fromFile(cameraFile);
+                    getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, result));
+                }
+            }
+            if (result != null) {
+                String path = FileUtils.getPath(getActivity(), result);
+                if (!TextUtils.isEmpty(path)) {
+                    File f = new File(path);
+                    if (f.exists() && f.isFile()) {
+                        Uri newUri = Uri.fromFile(f);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            if (mUploadCallBackAboveL != null) {
+                                if (newUri != null) {
+                                    mUploadCallBackAboveL.onReceiveValue(new Uri[]{newUri});
+                                    mUploadCallBackAboveL = null;
+                                    return;
+                                }
+                            }
+                        } else if (mUploadCallBack != null) {
+                            if (newUri != null) {
+                                mUploadCallBack.onReceiveValue(newUri);
+                                mUploadCallBack = null;
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+            clearUploadMessage();
+            return;
+        }
 
     }
 
@@ -177,6 +298,68 @@ public class WebItemFragment extends EasyFragment implements View.OnClickListene
             return true;
         }
         return false;
+    }
+
+    /**
+     * webview没有选择文件也要传null，防止下次无法执行
+     */
+    private void clearUploadMessage() {
+        if (mUploadCallBackAboveL != null) {
+            mUploadCallBackAboveL.onReceiveValue(null);
+            mUploadCallBackAboveL = null;
+        }
+        if (mUploadCallBack != null) {
+            mUploadCallBack.onReceiveValue(null);
+            mUploadCallBack = null;
+        }
+    }
+
+    private boolean isPermission() {
+        boolean isSaves = false;
+        for (String s : PERMISSIONS) {
+            if (ContextCompat.checkSelfPermission(getContext(), s) != PackageManager.PERMISSION_GRANTED) {
+                isSaves = true;
+            }
+        }
+        return isSaves;
+    }
+
+    /**
+     * 打开选择文件/相机
+     */
+    private void showFileChooser() {
+
+        if (isPermission()) {
+            ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 300);
+            return;
+        }
+
+//        Intent intent1 = new Intent(Intent.ACTION_PICK, null);
+//        intent1.setDataAndType(
+//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        Intent intent1 = new Intent(Intent.ACTION_GET_CONTENT);
+        intent1.addCategory(Intent.CATEGORY_OPENABLE);
+        intent1.setType("*/*");
+
+        Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        mCameraFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +
+                System.currentTimeMillis() + ".jpg";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            // android7.0注意uri的获取方式改变
+            Uri photoOutputUri = FileProvider.getUriForFile(
+                    getActivity(),
+                    getContext().getApplicationInfo().packageName + ".fileProvider",
+                    new File(mCameraFilePath));
+            intent2.putExtra(MediaStore.EXTRA_OUTPUT, photoOutputUri);
+        } else {
+            intent2.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(mCameraFilePath)));
+        }
+
+        Intent chooser = new Intent(Intent.ACTION_CHOOSER);
+        chooser.putExtra(Intent.EXTRA_TITLE, "File Chooser");
+        chooser.putExtra(Intent.EXTRA_INTENT, intent1);
+        chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{intent2});
+        startActivityForResult(chooser, REQUEST_CODE_FILE_CHOOSER);
     }
 
 }
