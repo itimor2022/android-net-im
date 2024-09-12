@@ -351,7 +351,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             boolean canBack = true;
-            if (mLastFragmentId == R.id.rb_tab_1) {
+            if (mLastFragmentId == R.id.rb_tab_nav1) {
                 Fragment lastFragment = getSupportFragmentManager().findFragmentByTag(String.valueOf(mLastFragmentId));
                 if (lastFragment != null && lastFragment instanceof Nav1Fragment &&
                         !((Nav1Fragment) lastFragment).canGoBack()) {
@@ -431,6 +431,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
         mRbTab2 = (RadioButton) findViewById(R.id.rb_tab_2);
         mRbTab3 = (RadioButton) findViewById(R.id.rb_tab_3);
         mRbTab4 = (RadioButton) findViewById(R.id.rb_tab_4);
+        mRbNav1Tab = (RadioButton) findViewById(R.id.rb_tab_nav1);
 
         mTvMessageNum = (TextView) findViewById(R.id.main_tab_one_tv);
         mTvNewFriendNum = (TextView) findViewById(R.id.main_tab_two_tv);
@@ -725,6 +726,9 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
                 case R.id.rb_tab_4:
                     fragment = new MeFragment();
                     break;
+                case R.id.rb_tab_nav1:
+                    fragment = new Nav1Fragment();
+                    break;
             }
         }
 
@@ -750,7 +754,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
 
         mLastFragmentId = checkedId;
 
-        if (checkedId == R.id.rb_tab_1) {
+        if (checkedId == R.id.rb_tab_nav1) {
 //            setStatusBarLight(false);
         } else {
             setStatusBarColor();

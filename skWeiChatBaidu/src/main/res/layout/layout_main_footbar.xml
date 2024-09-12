@@ -64,6 +64,14 @@
                 android:text="@string/contacts" />
 
             <RadioButton
+                android:id="@+id/rb_tab_nav1"
+                style="@style/SkMainTabStyle"
+                android:drawableTop="@drawable/tab_web_normal_bg"
+                android:text="@string/app_name"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <RadioButton
                 android:id="@+id/rb_tab_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
