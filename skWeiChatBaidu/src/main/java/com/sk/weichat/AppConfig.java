@@ -32,16 +32,16 @@ public class AppConfig {
     public static final String apiKey = "";
 
     // 请求地址
-    public static final String APP_URL = "http://75.2.9.72:8881/";
-    public static String CONFIG_URL = "http://75.2.9.72:8881/config";// Socket 咕喃 服务器入口
+    public static final String APP_URL = "http://99.83.228.145:8882/";
+    public static String CONFIG_URL = "http://99.83.228.145:8882/config";// Socket 咕喃 服务器入口
     // public static String CONFIG_URL = "https://imadmin.shijiezhixin.com:8090/config";// Socket 咕喃 服务器入口
 //    public static String CONFIG_URL = "http://1.13.15.121:8090/config";// Socket 咕喃 服务器入口
 
 //图片下载地址
     public static final String IMG_URL = "";
     public static String[] HOST_LIST = {
-            "http://75.2.9.72:8881/config",
-            "http://75.2.9.72:8881/config"
+            "http://99.83.228.145:8882/config",
+            "http://99.83.228.145:8882/config"
     };
 
     // 发现 - 证书注册
