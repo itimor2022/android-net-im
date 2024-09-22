@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 buildscript {
     ext {
-        appId = 'com.eaer.e4yd1ea205' // app的包名，
+        appId = 'com.qgm208.jdu13g' // app的包名，
         channel = 'client' // bugly上显示的渠道名，
 
         //buglyAppId = '57cf47aaa7' // bugly配置的appId,
@@ -48,7 +48,7 @@ android {
     defaultConfig {
         applicationId appId
         versionCode 2
-        versionName "2.0.5"
+        versionName "2.0.8"
         minSdkVersion min_version
         targetSdkVersion target_version
 
