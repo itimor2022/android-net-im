@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">中影剧赚</string>
+    <string name="app_name">聊剧赚</string>
     <!-- getSupportActionBar.title -->
     <string name="switch_account">Other</string>
     <string name="send_myspace">Send to circle of friends</string>
@@ -677,7 +677,7 @@
     <string name="hint_tag">With tags you can easily find and manage contacts</string>
     <string name="input_password">enter password</string>
     <string name="btn_login">log in</string>
-    <string name="example_file_name">中影剧赚 audio and video preview file</string>
+    <string name="example_file_name">聊剧赚 audio and video preview file</string>
     <string name="example_file_type">File from</string>
     <string name="example_file_size">11.3MB from</string>
     <string name="example_name">Hu XX</string>
@@ -2222,7 +2222,7 @@
     <string name="tip_bind_server_success">Bind WeChat successfully</string>
     <string name="suffix_live_room_locked"> The live room has been locked</string>
     <string name="suffix_join_live_room"> entered the live room</string>
-    <string name="keep_live_title">中影剧赚 core</string>
+    <string name="keep_live_title">聊剧赚 core</string>
     <string name="keep_live_description">Process daemon</string>
 
     <string name="please_wait_for_grow_keys">Generating a communication key pair, please wait&#8230;</string>
