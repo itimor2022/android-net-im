@@ -427,9 +427,9 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
     private void initView() {
         getSupportActionBar().hide();
         mRadioGroup = (RadioGroup) findViewById(R.id.main_rg);
-        mRbTab1 = (RadioButton) findViewById(R.id.rb_tab_1);
-        mRbTab2 = (RadioButton) findViewById(R.id.rb_tab_2);
-        mRbTab3 = (RadioButton) findViewById(R.id.rb_tab_3);
+        mRbTab1 = (RadioButton) findViewById(R.id.rb_tab_3);
+        mRbTab2 = (RadioButton) findViewById(R.id.rb_tab_1);
+        mRbTab3 = (RadioButton) findViewById(R.id.rb_tab_2);
         mRbTab4 = (RadioButton) findViewById(R.id.rb_tab_4);
         mRbNav1Tab = (RadioButton) findViewById(R.id.rb_tab_nav1);
 
@@ -710,13 +710,13 @@ public class MainActivity extends BaseActivity implements PermissionUtil.OnReque
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(String.valueOf(checkedId));
         if (fragment == null) {
             switch (checkedId) {
-                case R.id.rb_tab_1:
+                case R.id.rb_tab_2:
                     fragment = new MessageFragment();
                     break;
-                case R.id.rb_tab_2:
+                case R.id.rb_tab_3:
                     fragment = new FriendFragment();
                     break;
-                case R.id.rb_tab_3:
+                case R.id.rb_tab_1:
 //                    if (coreManager.getConfig().newUi) { // 切换新旧两种ui对应不同的发现页面，
 //                        fragment = new SquareFragment();
 //                    } else {

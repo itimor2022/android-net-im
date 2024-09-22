@@ -101,6 +101,24 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:id="@+id/main_tab_three_tv"
+                    android:layout_width="@dimen/indicator_size"
+                    android:layout_height="@dimen/indicator_size"
+                    android:layout_gravity="top|right"
+                    android:layout_marginRight="@dimen/indicator_margin"
+                    android:background="@drawable/tab_unread_bg"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="10dp"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
                     android:id="@+id/main_tab_one_tv"
                     android:layout_width="@dimen/indicator_size"
                     android:layout_height="@dimen/indicator_size"
@@ -122,25 +140,6 @@
 
                 <TextView
                     android:id="@+id/main_tab_two_tv"
-                    android:layout_width="@dimen/indicator_size"
-                    android:layout_height="@dimen/indicator_size"
-                    android:layout_gravity="top|right"
-                    android:layout_marginRight="@dimen/indicator_margin"
-                    android:background="@drawable/tab_unread_bg"
-                    android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="10dp"
-                    android:visibility="invisible" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/main_tab_three_tv"
                     android:layout_width="@dimen/indicator_size"
                     android:layout_height="@dimen/indicator_size"
                     android:layout_gravity="top|right"
