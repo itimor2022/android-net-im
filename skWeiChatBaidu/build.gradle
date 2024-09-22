@@ -47,8 +47,8 @@ android {
 
     defaultConfig {
         applicationId appId
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 4
+        versionName "4.0.1"
         minSdkVersion min_version
         targetSdkVersion target_version
 
@@ -172,7 +172,7 @@ android {
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // apk_渠道名_版本号_版本名称_版本阶段_编译时间.apk
-                        def fileName = "imzy" +
+                        def fileName = "im_zy" +
                                 "_C${defaultConfig.versionCode}" +
                                 "_V${defaultConfig.versionName}" +
                                 "_${releaseTime()}.apk"
