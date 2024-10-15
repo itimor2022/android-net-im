@@ -144,8 +144,11 @@ public class JitsiIncomingcall extends BaseActivity implements View.OnClickListe
         mInviteName.setText(call_Name);
         if (mCallType == 1) {
             mInviteInfo.setText(getString(R.string.suffix_invite_you_voice));
-            findViewById(R.id.rlReplayMessage).setVisibility(View.VISIBLE);
-            findViewById(R.id.rlChange).setVisibility(View.VISIBLE);
+            // 隐藏视频和回复
+            // findViewById(R.id.rlReplayMessage).setVisibility(View.VISIBLE);
+            // findViewById(R.id.rlChange).setVisibility(View.VISIBLE);
+            findViewById(R.id.rlReplayMessage).setVisibility(View.GONE);
+            findViewById(R.id.rlChange).setVisibility(View.GONE);
             ImageView ivChange = findViewById(R.id.change);
             ivChange.setBackgroundResource(R.mipmap.switching_video_call);
             TextView tvChange = findViewById(R.id.change_tv);
